@@ -7,11 +7,18 @@
 </head>
 
 <body>
-  <% if (kindofDay === "Thursday" || kindofDay === "Monday"){ %>
-  <h1 style="color:purple"><%= kindofDay %> To Do List </h1>
-  <% } else { %>
-  <h1 style="color:blue"><%= kindofDay %> To Do List </h1>
-  <% } %>
+  <h1> <%= kindofDay %> </h1>
+  <ul>
+    <li>Buy Food</li>
+    <li>Cook</li>
+    <li>Eat</li>
+  </ul>
+  <form class="" action="/" method="post">
+    <input type="text" name="newItem">
+    <button type="submit" name="button">Add</button>
+  </form>
+
+
 </body>
 
 </html>
