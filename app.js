@@ -5,7 +5,7 @@ const date = require(__dirname + "/date.js")
 const app = express();
 const items = ["Buy","Food", "Cook", "Eat",];
 const workItems = [];
-
+console.log(date);
 // static files
 app.use(bodyParser.urlencoded({
   extended: true
@@ -16,8 +16,8 @@ app.set('view engine', 'ejs');
 
 // navigations
 app.get("/", function(req, res) {
-const day = date();
-  res.render('list', {listTitle: day,newListItems: items
+const current = date.getDate2();
+  res.render('list', {listTitle: current,newListItems: items
   });
 });
 app.post("/", function(req, res) {
@@ -30,8 +30,6 @@ if (req.body.list === "Work"){
   items.push(item);
     res.redirect("/");
 }
-
-
 })
 // Navigation from homepage/work route
 app.get("/work" , function(req , res){
